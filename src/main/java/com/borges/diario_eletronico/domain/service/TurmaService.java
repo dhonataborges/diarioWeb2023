@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.borges.diario_eletronico.domain.exception.EntidadeEmUsoException;
 import com.borges.diario_eletronico.domain.exception.TurmaNaoEncontradoException;
-import com.borges.diario_eletronico.domain.model.Disciplina;
 import com.borges.diario_eletronico.domain.model.SerieNivelSubnivel;
 import com.borges.diario_eletronico.domain.model.Turma;
 import com.borges.diario_eletronico.domain.repository.TurmaRepository;
@@ -23,20 +22,11 @@ public class TurmaService {
 	@Autowired
 	private SerieNivelSubnivelService serieService;
 	
-	@Autowired
-	private DisciplinaService disciplinaService;
-	
 	public Turma salvar(Turma turma) {
 		
 		Long serieId = turma.getSerieNivelSubnivel().getId();
 						
 		SerieNivelSubnivel serie = serieService.buscarOuFalhar(serieId);
-		
-//		Long disciplinaId = turma.getSerieNivelSubnivel().getDisciplina().getId();
-//		
-//		Disciplina disciplina = disciplinaService.buscarOuFalhar(disciplinaId);
-//		
-//		serie.setDisciplina(disciplina);;
 		
 		turma.setSerieNivelSubnivel(serie);
 		

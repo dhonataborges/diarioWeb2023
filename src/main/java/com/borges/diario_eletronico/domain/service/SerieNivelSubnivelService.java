@@ -14,17 +14,8 @@ public class SerieNivelSubnivelService {
 
 	@Autowired
 	private SerieNivelSubnivelRepository serieRepository;
-
-	@Autowired
-	private DisciplinaService disciplinaService;
 	
 	public SerieNivelSubnivel salvar(SerieNivelSubnivel serie) {
-
-//		Long disciplinaId = serie.getDisciplina().getId();
-//
-//		Disciplina disciplina = disciplinaService.buscarOuFalhar(disciplinaId);
-//		
-//		serie.setDisciplina(disciplina);
 		
 		return serieRepository.save(serie);
 

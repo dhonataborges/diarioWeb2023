@@ -45,4 +45,8 @@ public class Turma {
 	@ManyToOne
 	@JoinColumn(name = "serie_nivel_subnivel_id", nullable = false)
 	private SerieNivelSubnivel serieNivelSubnivel;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "turma")
+	private List<ProfessorTurma> professorTurmas = new ArrayList<>();
 }

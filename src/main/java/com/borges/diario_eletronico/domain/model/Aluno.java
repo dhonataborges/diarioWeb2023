@@ -1,5 +1,6 @@
 package com.borges.diario_eletronico.domain.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -31,6 +32,6 @@ public class Aluno {
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "aluno")
-	private List<AlunoAula> alunoAula;
+	private List<AlunoAula> alunoAula = new ArrayList<>();
 
 }
